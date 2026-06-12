@@ -1,8 +1,8 @@
 # Guia de Contribuição e Padrões Arquiteturais
 
-Bem-vindo ao time Cube Car! 🚗💨
+Este documento define os "Guardrails" (guardas de proteção) para garantir que o código continue limpo, escalável e fácil de manter.
 
-Este documento define os "Guardrails" (guardas de proteção) para garantir que nosso código continue limpo, escalável e fácil de manter.
+> **Para agentes de IA que atuam neste repositório:** este documento é sua referência de arquitetura. As regras aqui descritas são absolutas — não existe julgamento contextual que as substitua. Leia antes de qualquer modificação estrutural.
 
 ## 🏗️ Filosofia Central: "Quem manda e quem obedece"
 
@@ -113,6 +113,7 @@ Antes de abrir um PR, verifique:
 1. [ ] Meu Gateway tem algum `if` que valida regra de negócio? (Se sim, mova para Service).
 2. [ ] Meu componente visual em `shared` está importando algo de `features`? (Proibido!).
 3. [ ] Estou orquestrando múltiplos domínios (Booking + Wallet) dentro de um arquivo de infraestrutura? (Mova para Service).
+4. [ ] O código introduz algum débito técnico ou mock não documentado? (Se sim, justifique com comentário e isole em arquivo `*.mock.ts` ou `dev-mocks.ts`).
 
 ---
 *Mantenha o código limpo, e a manutenção será um passeio.* 

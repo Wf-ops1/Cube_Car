@@ -1,0 +1,10 @@
+﻿src/core/error/GlobalErrorBoundary.tsx(15,14): error TS2339: Property 'state' does not exist on type 'GlobalErrorBoundary'.
+src/core/error/GlobalErrorBoundary.tsx(27,21): error TS2339: Property 'props' does not exist on type 'GlobalErrorBoundary'.
+src/features/catalog/views/CarDetails.logic.ts(54,9): error TS2322: Type 'User | { id: string; email: string; name: string; avatar: string; isSuperhost: false; city: string; verificationStatus: string; job: string; funFact: string; bio: string; role: "host"; }' is not assignable to type 'User'.
+  Object literal may only specify known properties, but 'verificationStatus' does not exist in type 'User'. Did you mean to write 'verification'?
+src/features/host-management/fleet/components/AddCarModal.logic.ts(3,10): error TS2724: '"@/core/data/car/car.types"' has no exported member named 'carSchema'. Did you mean 'CarSchema'?
+src/features/profile/hooks/useAccountSettings.logic.ts(20,53): error TS2339: Property 'phoneNumber' does not exist on type 'User'.
+src/features/profile/hooks/useProfileHub.logic.ts(12,30): error TS2339: Property 'memberSince' does not exist on type 'User'.
+src/features/profile/hooks/useProfileHub.logic.ts(16,22): error TS2551: Property 'verificationStatus' does not exist on type 'User'. Did you mean 'verification'?
+src/features/profile/logic/useEditProfile.logic.ts(44,41): error TS2339: Property 'job' does not exist on type 'User'.
+src/features/profile/logic/useEditProfile.logic.ts(45,53): error TS2339: Property 'languages' does not exist on type 'User'.

@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scrollbar-gutter: stable;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Global Styles for Design System Adaptation */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #3A4150;
+    /* Default Body Color */
+    background-color: #F8F9FB;
+    /* Base Background */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    /* Headings usually semibold/bold in this system */
+    color: #1C2230;
+    /* Primary Text Color */
+}
+
+button,
+.btn {
+    font-weight: 600;
+}
+
+/* UTILITY: Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* CUSTOM LOADER STYLES */
+.loader-container {
+    width: 3.25em;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+}
+
+.loader-svg {
+    fill: none;
+    stroke: #3667AA;
+    stroke-width: 4;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+}
+
+.loader-white {
+    stroke: white !important;
+}
+
+@keyframes rotate4 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash4 {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124px;
+    }
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* QUIET LUXURY UTILITIES (2025) */
+
+/* The "Borda de Luz" - A reflective top edge like chrome/silver */
+.light-border-top {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.light-border-top::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    z-index: 1;
+}
+
+/* Subtle Noise Texture for tactile feel */
+.noise-bg {
+    position: relative;
+}
+
+.noise-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.03;
+    /* Extremely subtle */
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Premium Shadow for Glassmorphism */
+.shadow-premium {
+    box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.04),
+        0 4px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.load-row {
+    width: 100px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.load-row span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    animation: up-down6 0.5s ease-in infinite alternate;
+}
+
+.load-row span:nth-child(2) {
+    animation-delay: 0.16s;
+    opacity: 0.8;
+}
+
+.load-row span:nth-child(3) {
+    animation-delay: 0.32s;
+    opacity: 0.6;
+}
+
+.load-row span:nth-child(4) {
+    animation-delay: 0.48s;
+    opacity: 0.4;
+}
+
+@keyframes up-down6 {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+/* IMMERSION MODE UTILITIES */
+body.hide-global-ui #global-header,
+body.hide-global-ui #bottom-navbar {
+    display: none !important;
+}
+
+/* STRATEGIC SCROLLBAR FIX (Quiet Luxury) */
+.scrollbar-custom {
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: rgba(156, 163, 175, 0.6) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 5px;
+    /* Ultra thin */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.6);
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.scrollbar-custom:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(107, 114, 128, 0.8);
+}

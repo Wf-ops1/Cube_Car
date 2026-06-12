@@ -1,0 +1,22 @@
+# Ignore all skills by default
+.agent/skills/*
+
+# Allow only bmad related skills
+!.agent/skills/bmad-*
+
+# Ignore IDE and AI folders completely for a cleaner Vercel build
+_bmad
+_bmad-output
+.claude
+.agent
+
+# Ignore Test and E2E related folders
+test-results
+playwright-report
+e2e
+
+# Ignore temporary debug files and documentation
+err.txt
+debug.html
+compile-errors.log
+*.md
